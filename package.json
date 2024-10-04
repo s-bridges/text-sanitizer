@@ -2,9 +2,14 @@
   "name": "text-sanitizer",
   "displayName": "text-sanitizer",
   "description": "Sanitize It! Transform your text with a twist! With Sanitize It!, simply highlight any text and replace it with a completely randomized string of the same length—featuring a delightful mix of uppercase letters, lowercase letters, digits, and special characters. Perfect for obfuscating sensitive data or just adding a dash of fun to your coding experience. Say goodbye to plain text and hello to secure randomness!",
+  "publisher": "SethBridges",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/s-bridges/text-sanitizer.git"
+  },
   "version": "0.0.1",
   "engines": {
-     "vscode": "^1.94.0"
+    "vscode": "^1.94.0"
   },
   "categories": [
     "Other"
@@ -13,38 +18,38 @@
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
-        {
-            "command": "extension.sanitize",
-            "title": "Sanitize Selected Text"
-        }
+      {
+        "command": "extension.sanitize",
+        "title": "Sanitize Selected Text"
+      }
     ],
     "menus": {
-        "editor/context": [
-            {
-                "command": "extension.sanitize",
-                "when": "editorHasSelection",
-                "group": "navigation"
-            }
-        ]
+      "editor/context": [
+        {
+          "command": "extension.sanitize",
+          "when": "editorHasSelection",
+          "group": "navigation"
+        }
+      ]
     }
-},
+  },
   "scripts": {
+    "build": "tsc",
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
-    "lint": "eslint src",
-    "test": "vscode-test"
+    "lint": "eslint src"
   },
   "devDependencies": {
-    "@types/vscode": "^1.94.0",
-    "@types/mocha": "^10.0.8",
     "@types/node": "20.x",
+    "@types/vscode": "^1.94.0",
     "@typescript-eslint/eslint-plugin": "^8.7.0",
     "@typescript-eslint/parser": "^8.7.0",
-    "eslint": "^9.11.1",
-    "typescript": "^5.6.2",
     "@vscode/test-cli": "^0.0.10",
-    "@vscode/test-electron": "^2.4.1"
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.11.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.5"
   }
 }
